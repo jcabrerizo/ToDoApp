@@ -23,9 +23,9 @@ useEffect( () => {
    }
 }, []);
 
-const addItem = newItemValue => {
+const addItem = title => {
     const body = { userId: 1,
-  id: toDoList[toDoList.length -1].id + 1, title: newItemValue, completed: false};
+  id: toDoList[toDoList.length - 1].id + 1, title, completed: false};
     try {
         toDoListApi.addItemToDoList(body).then((newItem) => {
         setToDoList((currentToDoList) => [...currentToDoList, newItem]);
@@ -54,8 +54,8 @@ const makeItemChange = (body, indexClicked) => {
         ));
       });
 }
-const editItem = (editValue, indexClicked) => {
-     const body = {...toDoList[indexClicked], title: editValue, completed: false }
+const editItem = (title, indexClicked) => {
+     const body = {...toDoList[indexClicked], title, completed: false }
     try {
       makeItemChange(body, indexClicked);
     } catch (error) {

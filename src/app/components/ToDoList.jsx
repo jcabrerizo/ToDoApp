@@ -21,13 +21,13 @@ export const ToDoList = () => {
       toggleCompleteItem(checkBox.checked, indexClicked);
     };
 
-    const handleEditClick = (indexClicked) => {
+    const handleEditClick = (itemIndex) => {
       if (editState.editing) {
         setEditState({editing: false});
-        const  editInput =  document.getElementById(`editItem${indexClicked}`);
+        const  editInput =  document.getElementById(`editItem${itemIndex}`);
         editItem(editInput.value, indexClicked);
       }  else {
-        setEditState({editing: true, itemIndex: indexClicked})
+        setEditState({editing: true, indexClicked})
       }
     } 
 
