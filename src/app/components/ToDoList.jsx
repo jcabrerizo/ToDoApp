@@ -31,6 +31,7 @@ export const ToDoList = () => {
       }
     } 
 
+    console.log(toDoList);
     return (
     <div>
       <form onSubmit={handleAddItem}>
@@ -61,7 +62,7 @@ export const ToDoList = () => {
         ) :
          (
          <div>
- <input type="checkbox" name="isComplete" id={`checkbox${i}`} defaultChecked={item.completed} onChange={() => handleCheckBoxClick(i)}/>
+ <input type="checkbox" name="isComplete" id={`checkbox${i}`} checked={item.completed} onChange={() => handleCheckBoxClick(i)}/>
         <label htmlFor={`checkbox${i}`}>
           {item.completed ? 
           <s>{item.title}</s>
