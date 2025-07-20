@@ -31,7 +31,6 @@ export const ToDoList = () => {
       }
     } 
 
-    console.log(toDoList);
     return (
     <div>
       <form onSubmit={handleAddItem}>
