@@ -1,9 +1,12 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import {ToDoList} from './components/first';
+import {ToDoList} from './components/ToDoList';
+import {AppProvider} from './hooks/AppContext';
+
 
 export default function Home() {
   return (
-    <ToDoList />
+    <AppProvider>
+      <ToDoList />
+    </AppProvider>
+    
   );
 }
