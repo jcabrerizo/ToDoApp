@@ -24,8 +24,12 @@ useEffect( () => {
 }, []);
 
 const addItem = title => {
-    const body = { userId: 1,
-  id: toDoList[toDoList.length - 1].id + 1, title, completed: false};
+    const body = { 
+      userId: 1,
+      id: toDoList.length ? toDoList[toDoList.length - 1].id + 1 : 0,
+      title,
+       completed: false
+      };
     try {
         toDoListApi.addItemToDoList(body).then((newItem) => {
         setToDoList((currentToDoList) => [...currentToDoList, newItem]);
