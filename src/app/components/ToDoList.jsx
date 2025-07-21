@@ -25,9 +25,9 @@ export const ToDoList = () => {
       if (editState.editing) {
         setEditState({editing: false});
         const  editInput =  document.getElementById(`editItem${itemIndex}`);
-        editItem(editInput.value, indexClicked);
+        editItem(editInput.value, itemIndex);
       }  else {
-        setEditState({editing: true, indexClicked})
+        setEditState({editing: true, itemIndex})
       }
     } 
 
